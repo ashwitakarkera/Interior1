@@ -1,6 +1,4 @@
 import { useRef, useState, useEffect } from "react";
-import beforeImg from "../assets/images/before.png";
-import afterImg from "../assets/images/after.png";
 
 
 export default function BeforeAfter() {
@@ -53,7 +51,7 @@ export default function BeforeAfter() {
         className="relative w-full max-w-5xl mx-auto h-[600px] overflow-hidden cursor-ew-resize select-none"
       >
         <img 
-          src={afterImg} 
+          src="./after.png" 
           alt="After" 
           className="absolute inset-0 w-full h-full object-cover"
           draggable="false"
@@ -64,7 +62,7 @@ export default function BeforeAfter() {
           style={{ width: `${position}%` }}
         >
           <img 
-            src={beforeImg} 
+            src="./before.png" 
             alt="Before" 
             className="absolute inset-0 h-full object-cover"
             style={{ width: `${containerWidth}px`, maxWidth: 'none' }}
