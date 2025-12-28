@@ -15,8 +15,8 @@ const PACKAGES = [
     title: "Online\nDesign",
     description:
       "Partner online with one of our talented designers to bring your dream home to life - any time and any place.",
-    oldPrice: "$199",
-    newPrice: "$99",
+    oldPrice: "₹17,999",
+    newPrice: "₹8,999",
     note: "per room",
     buttonText: "Get Started Online",
   },
@@ -26,11 +26,11 @@ const PACKAGES = [
     title: "In-Person\nDesign",
     description:
       "A full-service experience in your home. Your designer will assess your space and create a comprehensive design for your home.",
-    oldPrice: "$699",
-    newPrice: "$349",
-    note: "plus $99 for each additional room",
+    oldPrice: "₹62,999",
+    newPrice: "₹31,499",
+    note: "plus ₹8,999 for each additional room",
     buttonText: "Get Started In Person",
-  },
+  }, // Fixed the syntax error here
 ];
 
 /* ================= COMPONENT ================= */
@@ -41,14 +41,17 @@ export default function OfferSection() {
       className="relative bg-cover bg-center py-28"
       style={{ backgroundImage: `url(${bgImg})` }}
     >
-      <div className="max-w-7xl mx-auto px-8">
+      {/* Overlay to ensure text readability if bg image is busy */}
+      <div className="absolute inset-0 bg-white/30 pointer-events-none"></div>
+
+      <div className="relative max-w-7xl mx-auto px-8 z-10">
 
         {/* Header */}
         <div className="text-center mb-20">
-          <p className="text-xs tracking-widest uppercase mb-6">
+          <p className="text-xs tracking-widest uppercase mb-6 font-semibold text-gray-800">
             {SECTION_TEXT.tag}
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl max-w-3xl mx-auto leading-snug">
+          <h2 className="font-serif text-4xl md:text-5xl max-w-3xl mx-auto leading-snug text-[#2b1e16]">
             {SECTION_TEXT.title}
           </h2>
         </div>
@@ -59,42 +62,42 @@ export default function OfferSection() {
           {PACKAGES.map((item, index) => (
             <div
               key={index}
-              className="relative bg-white p-10 shadow-xl flex flex-col"
+              className="relative bg-white p-10 shadow-xl flex flex-col border border-gray-100"
             >
-              {/* Discount */}
-              <div className="absolute top-0 right-0 bg-[#dbe6b8] px-6 py-4 text-sm font-semibold">
+              {/* Discount Tag */}
+              <div className="absolute top-0 right-0 bg-[#dbe6b8] px-6 py-4 text-sm font-bold text-[#2b1e16]">
                 {item.discount}
               </div>
 
-              <p className="text-xs tracking-widest uppercase mb-6">
+              <p className="text-xs tracking-widest uppercase mb-6 text-gray-500 font-bold">
                 {item.label}
               </p>
 
-              <h3 className="font-serif text-4xl mb-6 whitespace-pre-line">
+              <h3 className="font-serif text-4xl mb-6 whitespace-pre-line text-[#2b1e16]">
                 {item.title}
               </h3>
 
-              <p className="text-sm leading-relaxed mb-10">
+              <p className="text-sm leading-relaxed mb-10 text-gray-600">
                 {item.description}
               </p>
 
-              {/* Price */}
+              {/* Price Section */}
               <div className="mb-8">
-                <p className="text-xl">
-                  <span className="line-through text-gray-400 mr-3">
+                <div className="flex items-baseline gap-3">
+                  <span className="line-through text-gray-400 text-xl">
                     {item.oldPrice}
                   </span>
-                  <span className="text-[#6aaed6] text-3xl font-medium">
+                  <span className="text-[#6aaed6] text-3xl font-bold">
                     {item.newPrice}
                   </span>
-                </p>
-                <p className="text-xs mt-2 text-gray-500">
+                </div>
+                <p className="text-xs mt-2 text-gray-400 italic">
                   {item.note}
                 </p>
               </div>
 
               {/* CTA Button */}
-              <button className="mt-auto w-full border border-black py-4 text-xs tracking-widest uppercase font-medium hover:bg-black hover:text-white transition">
+              <button className="mt-auto w-full border border-black py-4 text-xs tracking-widest uppercase font-bold hover:bg-black hover:text-white transition-all duration-300">
                 {item.buttonText}
               </button>
             </div>

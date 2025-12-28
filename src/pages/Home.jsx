@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import Testimonials from "../components/Testimonials";
 import OfferSection from "../components/OfferSection";
 import BeforeAfter from "../components/BeforeAfter";
+import BeforeAfterSlider from "../components/BeforeAfterSlider";
+import Stats from "../components/stats";
 import { EnquiryForm } from "../components/EnquiryForm";
 import EnquireButton from "../components/EnquireButton";
 import Footer from "../components/Footer";
@@ -17,6 +19,8 @@ export default function Home() {
       <Testimonials />
       <OfferSection />
       <BeforeAfter />
+      <BeforeAfterSlider />
+      <Stats />
       <EnquiryForm />
       <EnquireButton />
       <Footer />

@@ -17,13 +17,13 @@ export default function Footer() {
         {/* NAV LINKS */}
         <div>
           <h3 className="text-sm font-semibold tracking-wider mb-4">
-            Navigation
+            Company
           </h3>
           <ul className="space-y-2 text-sm text-gray-400">
-            <li className="hover:text-white cursor-pointer">Home</li>
-            <li className="hover:text-white cursor-pointer">Before / After</li>
+            <li className="hover:text-white cursor-pointer">Careers</li>
+            <li className="hover:text-white cursor-pointer">Design Careers</li>
             <li className="hover:text-white cursor-pointer">Gallery</li>
-            <li className="hover:text-white cursor-pointer">Contact</li>
+            <li className="hover:text-white cursor-pointer">Blog</li>
           </ul>
         </div>
 
@@ -32,8 +32,8 @@ export default function Footer() {
           <h3 className="text-sm font-semibold tracking-wider mb-4">
             Contact
           </h3>
-          <p className="text-sm text-gray-400">hello@verdure.com</p>
-          <p className="text-sm text-gray-400 mt-1">+91 98765 43210</p>
+          <p className="text-sm text-gray-400">starxinnovations&solutions</p>
+          <p className="text-sm text-gray-400 mt-1">+91 999999999</p>
           <p className="text-sm text-gray-400 mt-3">
             © {new Date().getFullYear()} Verdure. All rights reserved.
           </p>
